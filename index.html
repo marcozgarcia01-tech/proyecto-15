@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tarjetas de ganadería con el framework Vue.js.">
+    <meta name="keywords" content="flashcards, ganadería, Vue, JavaScript">
+    <meta name="author" content="Marcos Alejandro García">
+    <title>Tarjetas de Ganadería</title>
+    <link rel="stylesheet" href="css/estilo.css ">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+    <main id="app" class="contenedor">
+        <h1>Tarjetas de Ganadería</h1>
+
+        <div class="porcentajeBarra">
+            <div class="rellenoProgreso" :style="{ width: porcentajeProgreso + '%' }"></div>
+        </div>
+        <p class="textoProgreso">Tarjeta {{ indiceActual + 1 }} de {{ tarjetas.length }}</p>
+
+        <div class="tarjetaFlash">
+            <p>{{ mostrarRespuesta ? tarjetas[indiceActual].respuesta : tarjetas[indiceActual].pregunta }}</p>
+        </div>
+
+        <div class="botonesNavegacion">
+            <button @click="anterior" :disabled="indiceActual === 0">Anterior</button>
+            <button @click="mostrarRespuesta = !mostrarRespuesta">
+                {{ mostrarRespuesta ? 'Ocultar' : 'Mostrar Respuesta' }}
+            </button>
+            <button @click="siguiente" :disabled="indiceActual === tarjetas.length - 1">Siguiente</button>
+        </div>
+    </main>
+
+    <script src="srcipt.js"></script>
+</body>
+
+</html>
