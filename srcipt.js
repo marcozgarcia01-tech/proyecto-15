@@ -6,8 +6,8 @@ createApp({
     data() {
         return {
             indiceActual: 0, // se empieza en la primera tarjeta
-            mostrarRespuesta: false, // Ocultamos la respuesta al inicio
-            tarjetas: [
+            mostrarRespuesta: false, // Ocultamos la respuesta al inicio un interruptor booleano para alternar entre ver la pregunta o la respuesta
+            tarjetas: [ //un interruptor booleano para alternar entre ver la pregunta o la respuesta
                 { pregunta: "¿Qué es la ganadería?", respuesta: "Es la actividad de criar animales para producción." },
                 { pregunta: "¿Qué es el pastoreo?", respuesta: "Es la práctica de alimentar al ganado en pastizales." },
                 { pregunta: "¿Qué es un hato?", respuesta: "Es el conjunto de animales de una finca." }
